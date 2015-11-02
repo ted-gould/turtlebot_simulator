@@ -1,0 +1,16 @@
+name: turtlebot
+summary: Launchers for Gazebo simulation of the TurtleBot
+description: Turtlebot provides simulation in ROS
+vendor: ros@ros.org
+version: 2.2.2
+icon: icon.svg
+
+parts:
+    turtlebot:
+        plugin: catkin
+        source: .
+        catkin-packages:
+            - turtlebot_gazebo
+            - turtlebot_simulator
+            - turtlebot_stage
+            - turtlebot_stdr
