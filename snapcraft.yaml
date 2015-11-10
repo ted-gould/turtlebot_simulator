@@ -6,6 +6,8 @@ version: 2.2.2
 icon: icon.svg
 
 parts:
+    roscore:
+        plugin: roscore
     turtlebot:
         plugin: catkin
         source: .
@@ -14,3 +16,16 @@ parts:
             - turtlebot_simulator
             - turtlebot_stage
             - turtlebot_stdr
+        after: roscore
+    rosenv:
+        plugin: copy
+        files:
+            rosenv: rosenv
+
+binaries:
+     visualization:
+         exec: rosenv roslaunch turtlebot_gazebo turtlebot_world.launch
+
+services:
+     rosmaster:
+         start: rosenv rosmaster
