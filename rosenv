@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. $SNAP_APP_PATH/opt/ros/indigo/setup.bash
+
+exec $*
